@@ -1,0 +1,85 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    threads:
+      max: 200
+      min-spare: 30
+    connection-timeout: 5000ms
+  port: 8080
+  servlet:
+    context-path: /emoss-wxx-api
+
+
+
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/emoss?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: Ffqm110013
+      initial-size: 8
+      max-active: 16
+      min-idle: 8
+      max-wait: 60000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: abc123456
+    jedis:
+      pool:
+        max-active: 1000
+        max-wait: -1ms
+        max-idle: 16
+        min-idle: 8
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: emoss
+      authentication-database: admin
+      username: admin
+      password: Ffqm110013
+  mail:
+    default-encoding: UTF-8
+    host: smtp.aliyun.com
+    username: FengQiMing@aliyun.com
+    password: Ffqm110013
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.example.emos.wx.db.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    root: info
+    com.example.emos.wx.db.dao : warn
+  pattern:
+    console: "%d{HH:mm:ss}  %-5level  %msg%n"
+emos:
+  jwt:
+    secret: abc123456
+    expire: 5
+    cache-expire: 10
+  face:
+    createFaceModelUrl: http://192.168.1.13:3000/create_face_model
+    checkinUrl: http://192.168.1.13:3000/checkin
+  email:
+    system: FengQiMing@aliyun.com
+    hr: 2306309159@qq.com
+  image-folder: E:\emoss\emoss-wxx-api\image
+  code: youdonothavecode
+wx:
+  app-id: wx5ad89c6e1d58c3c6
+  app-secret: d42905b1702622b012d44779d62dafd7
