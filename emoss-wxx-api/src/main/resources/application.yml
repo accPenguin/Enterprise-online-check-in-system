@@ -18,9 +18,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/emoss?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      url: jdbc:
       username: root
-      password: Ffqm110013
+      password: 
       initial-size: 8
       max-active: 16
       min-idle: 8
@@ -32,8 +32,8 @@ spring:
   redis:
     database: 0
     host: localhost
-    port: 6379
-    password: abc123456
+    port: 
+    password: 
     jedis:
       pool:
         max-active: 1000
@@ -44,16 +44,16 @@ spring:
   data:
     mongodb:
       host: localhost
-      port: 27017
+      port: 
       database: emoss
-      authentication-database: admin
-      username: admin
-      password: Ffqm110013
+      authentication-database: 
+      username: 
+      password:
   mail:
     default-encoding: UTF-8
     host: smtp.aliyun.com
-    username: FengQiMing@aliyun.com
-    password: Ffqm110013
+    username:
+    password:
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.example.emos.wx.db.pojo
@@ -69,17 +69,17 @@ logging:
     console: "%d{HH:mm:ss}  %-5level  %msg%n"
 emos:
   jwt:
-    secret: abc123456
+    secret:
     expire: 5
     cache-expire: 10
   face:
-    createFaceModelUrl: http://192.168.1.13:3000/create_face_model
-    checkinUrl: http://192.168.1.13:3000/checkin
+    createFaceModelUrl: http:/
+    checkinUrl: http
   email:
-    system: FengQiMing@aliyun.com
-    hr: 2306309159@qq.com
+    system: Fe
+    hr: 23
   image-folder: E:\emoss\emoss-wxx-api\image
   code: youdonothavecode
 wx:
-  app-id: wx5ad89c6e1d58c3c6
-  app-secret: d42905b1702622b012d44779d62dafd7
+  app-id: wx
+  app-secret: d
